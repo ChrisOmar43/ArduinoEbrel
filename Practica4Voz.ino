@@ -47,7 +47,7 @@ void modoFiesta(){
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
     
-    while(voz == "fiesta" || voz == "modo fiesta" || voz != "Apagar modo fiesta" || voz == "tú no eres bebecita tú eres bebesota"){
+    while(voz != "Apagar modo fiesta"){
       digitalWrite(2, HIGH);
       delay(100);
       digitalWrite(2, LOW);
