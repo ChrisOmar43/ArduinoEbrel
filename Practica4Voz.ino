@@ -37,6 +37,20 @@ void loop() {
     digitalWrite(3, LOW);
     digitalWrite(2, LOW);
   }
+
+  if(voz == "encender Auto" || voz == "encender auto"){
+    digitalWrite(2, HIGH);
+    digitalWrite(4, HIGH);
+    delay(200);
+    digitalWrite(2, LOW);
+    digitalWrite(4, LOW);
+    delay(100);
+    digitalWrite(2, HIGH);
+    digitalWrite(4, HIGH);
+    delay(200);
+    digitalWrite(2, LOW);
+    digitalWrite(4, LOW);
+  } 
   
   if(voz == "fiesta" || voz == "modo fiesta" || voz == "tú no eres bebecita tú eres bebesota")
     modoFiesta();
