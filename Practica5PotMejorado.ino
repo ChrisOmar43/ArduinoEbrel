@@ -1,4 +1,4 @@
-int potValue, i, numLED;
+int potValue, i, ni, numLED, ayuda;
 int PredidoConPot();
 void LucesSeguidas();
 void Prendido(int x);
@@ -15,14 +15,13 @@ pinMode(7, OUTPUT);
 pinMode(8, OUTPUT);
 pinMode(9, OUTPUT);
 pinMode(13, INPUT);
-Serial.begin(9600);
 }
 
 void loop() {
   potValue = analogRead(A0);
   i = digitalRead(13);
 
-//Ciclo del segundo programa
+//Ciclo del primer programa
   while(i !=1){
     potValue = analogRead(A0);
     PrendidoConPot();
@@ -32,247 +31,24 @@ void loop() {
   i = 0;
   delay(1000);
 //Ciclo del segundo pragrama
+  delay(500);
   while(i != 1){
-    if(numLED == 1){
-      Prendido(2);
-      if(digitalRead(13))
+    ayuda = numLED + 2;
+    for(ni = 2; ni < ayuda; ni++){
+      Prendido(ni);
+      if(digitalRead(13)){
+        i = 1;
         break;
-      Apagado(2);
-      if(digitalRead(13))
-        break;
-      i = digitalRead(13);
+      }
     }
-    if(numLED == 2){
-      Prendido(2);
-      if(digitalRead(13))
+    for(ni; ni > 1; ni--){
+      Apagado(ni);
+      if(digitalRead(13)){
+        i = 1;
         break;
-      Prendido(3);
-      if(digitalRead(13))
-        break;
-      Apagado(3);
-      if(digitalRead(13))
-        break;
-      Apagado(2);
-      if(digitalRead(13))
-        break;
-      i = digitalRead(13);
+      }
     }
-    if(numLED == 3){
-      Prendido(2);
-      if(digitalRead(13))
-        break;
-      Prendido(3);
-      if(digitalRead(13))
-        break;
-      Prendido(4);
-      if(digitalRead(13))
-        break;
-      Apagado(4);
-      if(digitalRead(13))
-        break;
-      Apagado(3);
-      if(digitalRead(13))
-        break;
-      Apagado(2);
-      if(digitalRead(13))
-        break;
-      i = digitalRead(13);
-    }
-    if(numLED == 4){
-      Prendido(2);
-      if(digitalRead(13))
-        break;
-      Prendido(3);
-      if(digitalRead(13))
-        break;
-      Prendido(4);
-      if(digitalRead(13))
-        break;
-      Prendido(5);
-      if(digitalRead(13))
-        break;
-      Apagado(5);
-      if(digitalRead(13))
-        break;
-      Apagado(4);
-      if(digitalRead(13))
-        break;
-      Apagado(3);
-      if(digitalRead(13))
-        break;
-      Apagado(2);
-      if(digitalRead(13))
-        break;
-      i = digitalRead(13);
-    }
-    if(numLED == 5){
-      Prendido(2);
-      if(digitalRead(13))
-        break;
-      Prendido(3);
-      if(digitalRead(13))
-        break;
-      Prendido(4);
-      if(digitalRead(13))
-        break;
-      Prendido(5);
-      if(digitalRead(13))
-        break;
-      Prendido(6);
-      if(digitalRead(13))
-        break;
-      Apagado(6);
-      if(digitalRead(13))
-        break;
-      Apagado(5);
-      if(digitalRead(13))
-        break;
-      Apagado(4);
-      if(digitalRead(13))
-        break;
-      Apagado(3);
-      if(digitalRead(13))
-        break;
-      Apagado(2);
-      if(digitalRead(13))
-        break;
-      i = digitalRead(13);
-    }
-    if(numLED == 6){
-      Prendido(2);
-      if(digitalRead(13))
-        break;
-      Prendido(3);
-      if(digitalRead(13))
-        break;
-      Prendido(4);
-      if(digitalRead(13))
-        break;
-      Prendido(5);
-      if(digitalRead(13))
-        break;
-      Prendido(6);
-      if(digitalRead(13))
-        break;
-      Prendido(7);
-      if(digitalRead(13))
-         break;
-      Apagado(7);
-      if(digitalRead(13))
-        break;
-      Apagado(6);
-      if(digitalRead(13))
-        break;
-      Apagado(5);
-      if(digitalRead(13))
-        break;
-      Apagado(4);
-      if(digitalRead(13))
-        break;
-      Apagado(3);
-      if(digitalRead(13))
-        break;
-      Apagado(2);
-      if(digitalRead(13))
-        break;
-      i = digitalRead(13);
-    }
-    if(numLED == 7){
-      Prendido(2);
-      if(digitalRead(13))
-        break;
-      Prendido(3);
-      if(digitalRead(13))
-        break;
-      Prendido(4);
-      if(digitalRead(13))
-        break;
-      Prendido(5);
-      if(digitalRead(13))
-        break;
-      Prendido(6);
-      if(digitalRead(13))
-        break;
-      Prendido(7);
-      if(digitalRead(13))
-         break;
-      Prendido(8);
-      if(digitalRead(13))
-        break;
-      Apagado(8);
-      if(digitalRead(13))
-        break;
-      Apagado(7);
-      if(digitalRead(13))
-        break;
-      Apagado(6);
-      if(digitalRead(13))
-        break;
-      Apagado(5);
-      if(digitalRead(13))
-        break;
-      Apagado(4);
-      if(digitalRead(13))
-        break;
-      Apagado(3);
-      if(digitalRead(13))
-        break;
-      Apagado(2);
-      if(digitalRead(13))
-        break;
-      i = digitalRead(13);
-    }
-    if(numLED == 8){
-      Prendido(2);
-      if(digitalRead(13))
-        break;
-      Prendido(3);
-      if(digitalRead(13))
-        break;
-      Prendido(4);
-      if(digitalRead(13))
-        break;
-      Prendido(5);
-      if(digitalRead(13))
-        break;
-      Prendido(6);
-      if(digitalRead(13))
-        break;
-      Prendido(7);
-      if(digitalRead(13))
-         break;
-      Prendido(8);
-      if(digitalRead(13))
-        break;
-       Prendido(9);
-      if(digitalRead(13))
-        break;
-      Apagado(9);
-      if(digitalRead(13))
-        break;
-      Apagado(8);
-      if(digitalRead(13))
-        break;
-      Apagado(7);
-      if(digitalRead(13))
-        break;
-      Apagado(6);
-      if(digitalRead(13))
-        break;
-      Apagado(5);
-      if(digitalRead(13))
-        break;
-      Apagado(4);
-      if(digitalRead(13))
-        break;
-      Apagado(3);
-      if(digitalRead(13))
-        break;
-      Apagado(2);
-      if(digitalRead(13))
-        break;
-      i = digitalRead(13);
-    }
+    i = digitalRead(13);
   }
   
   i = 0;
