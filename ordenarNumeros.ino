@@ -25,10 +25,6 @@ void loop(){
   if(we == 0){
     z=0;
     CopiarLista();
-//    while(z < 9){
-//      Serial.println(listH[z]);
-//      z++;
-//    }
   }
   if(wd == 0)OrdenarLista();
 }
@@ -61,9 +57,7 @@ void MostrarLista2(){
 int OrdenarLista(){
   wd = 0;
   a = 0;
-//  Serial.println(".");
   while(a < 10){
-//    Serial.println(".");
     if(listH[0]==0){
       listO[a] = list[0];
       a++;
@@ -128,17 +122,3 @@ int CopiarLista(){
   }
   return we;
 }
-//void OrdenarLista(la){
-//  while(la < 10){
-//    if(list[la]>=list[0]&&list[la]>=list[1]&&list[la]>=list[2]&&list[la]>=list[3]&&list[la]>=list[4]&&list[la]>=list[5]&&list[la]>=list[6]&&list[la]>=list[7]&&list[la]>=list[8]&&list[la]>=list[9]&&){
-//      listO[0] = la;
-//      break;
-//    }
-//  }
-//  while(la < 10){
-//    if(list[la]<=list[0]&&list[la]>=list[1]&&list[la]>=list[2]&&list[la]>=list[3]&&list[la]>=list[4]&&list[la]>=list[5]&&list[la]>=list[6]&&list[la]>=list[7]&&list[la]>=list[8]&&list[la]>=list[9]&&){
-//      listO[0] = la;
-//      break;
-//    }
-//  }
-//}
